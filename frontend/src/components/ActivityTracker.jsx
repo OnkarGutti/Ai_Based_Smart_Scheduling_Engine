@@ -4,14 +4,14 @@ import { Activity, Play, Square, AlertCircle, RefreshCw } from 'lucide-react';
 
 // Human-readable labels for model output
 const ACTIVITY_LABELS = {
-  walking:            '🚶 Walking',
-  walking_upstairs:   '🏃 Upstairs',
+  walking: ' Walking',
+  walking_upstairs: '🏃 Upstairs',
   walking_downstairs: '🏃 Downstairs',
-  sitting:            '💺 Sitting',
-  standing:           '🧍 Standing',
-  laying:             '🛌 Laying',
-  stationary:         '🧘 Stationary',
-  unknown:            '🤔 Detecting…',
+  sitting: '💺 Sitting',
+  standing: '🧍 Standing',
+  laying: '🛌 Laying',
+  stationary: '🧘 Stationary',
+  unknown: '🤔 Detecting…',
 };
 
 const friendlyLabel = (activity) =>
@@ -31,16 +31,14 @@ export default function ActivityTracker() {
         </div>
       )}
 
-      <div className={`flex items-center gap-3 p-3 rounded-2xl shadow-xl border ${
-        tracking
+      <div className={`flex items-center gap-3 p-3 rounded-2xl shadow-xl border ${tracking
           ? (status?.busy ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200')
           : 'bg-white border-slate-200'
-      }`}>
+        }`}>
         <button
           onClick={toggle}
-          className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-inner text-white transition-colors ${
-            tracking ? 'bg-slate-800 hover:bg-slate-700' : 'bg-[var(--accent-base)] hover:bg-indigo-700'
-          }`}
+          className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-inner text-white transition-colors ${tracking ? 'bg-slate-800 hover:bg-slate-700' : 'bg-[var(--accent-base)] hover:bg-indigo-700'
+            }`}
         >
           {tracking ? <Square size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}
         </button>
